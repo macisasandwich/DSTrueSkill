@@ -148,7 +148,7 @@ class DSTSPrompt(Cmd):
                     self.add_player(player['name'], player['mu'], player['sigma'])
         except:
             print("Cannot load {0}. Creating new environment with no players.".format(glb.dataFile))
-            self.TSEnv = trueskill.TrueSkill()
+            self.TSEnv = trueskill.TrueSkill(draw_probability=0)
             self.players = {}
                 
         glb.print_debug(self.players)
